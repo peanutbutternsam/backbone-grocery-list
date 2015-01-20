@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/grocery.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+
+  <title></title>
+</head>
+<body>
+  <%= yield %>
+
+  <script id="store-list" type="text/template">
+    <div class="row">
+      <div class="span6">
+        <h2>Store List</h2>
+
+        <table id="store_list">
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+           <tbody>
+           </tbody>
+        </table>
+      </div>
+    </div>
+
+  </script>
+
+  <script id='checkout' type ="text/template">
+      <div class="span6">
+        <h2>My Grocery List</h2>
+
+        <table id="grocery_list">
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>TOTAL:</td>
+              <td id="total_cost"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+  </script>
+
+  <script id='itemRow' type="text/template">
+
+      <td class="item_name"><%%= item.name %></td>
+      <td class="item_price"><%%= item.price %></td>
+
+  </script>
+
+  <script src="/js/vendor/jquery-1.11.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+
+  <script src="/js/vendor/underscore.js"></script>
+  <script src="/js/vendor/backbone.js"></script>
+  <script src="/js/models.js"></script>
+  <script src="/js/views.js"></script>
+  <script src="/js/collections.js"></script>
+  <script src="/js/application.js"></script>
+</body>
+</html>
